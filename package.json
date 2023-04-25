@@ -1,0 +1,29 @@
+{
+  "name": "riskguardian",
+  "version": "1.0.0",
+  "description": "Shopping list built with Mern stack",
+  "main": "server.js",
+  "scripts": {
+    "client-install": "npm install --prefix riskguardian",
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix riskguardian",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "joi": "^17.8.3",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^5.11.10",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "redux": "^4.2.1",
+    "redux-thunk": "^2.4.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.21"
+  }
+}
