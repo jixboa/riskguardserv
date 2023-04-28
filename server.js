@@ -22,7 +22,7 @@ app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 app.use(cors());
 
 //DB Config
-const db = require("./config/keys").mongoLocal;
+const db = require("./config/keys").mongoURI;
 
 //Connect to Mongo
 mongoose
