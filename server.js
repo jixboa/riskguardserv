@@ -46,7 +46,7 @@ app.use("/api/indprofiles", ind_profiles);
 app.use("/api/corpprofiles", corp_profiles);
 
 app.get("/", (req, res) => {
-  res.send("Welcome to Ghanacard Linkage");
+  res.send("Welcome to RiskGuard");
 });
 
 const port = process.env.PORT || 5000;
