@@ -15,7 +15,7 @@ const Indicator_tbs = require("../../modules/Indicator_m");
     .then((items) => res.json(items));
   console.log(req.user);
 }); */
-router.get("/", auth, async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const indicators = await Indicator_tbs.find().sort({ date: 1 });
 
@@ -30,7 +30,7 @@ router.get("/", auth, async (req, res) => {
 //@des Create an item
 //@access Public
 
-router.post("/", (req, res) => {
+router.post("/", auth, (req, res) => {
   //console.log(req.body);
   const newIndicator_m = new Indicator_tbs({
     indicator_type: req.body.indicator_type,
@@ -78,7 +78,7 @@ router.put("/:id", auth, (req, res) => {
     .then((item) => item.remove().then(() => res.json({ success: true, item })))
     .catch((err) => res.status(404).json({ sucess: false, err }));
 }); */
-router.delete("/:ids", async (req, res) => {
+router.delete("/:ids", auth, async (req, res) => {
   const idString = req.params.ids;
   const ids = idString.split(",").map((id) => mongoose.Types.ObjectId(id));
   try {

@@ -13,7 +13,7 @@ const Scores = require("../../modules/Score_m");
     .then((items) => res.json(items));
   console.log(req.user);
 }); */
-router.get("/", auth, async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const scores = await Scores.find().sort({ date: 1 });
 
@@ -28,7 +28,7 @@ router.get("/", auth, async (req, res) => {
 //@des Create an item
 //@access Public
 
-router.post("/", (req, res) => {
+router.post("/", auth, (req, res) => {
   //console.log(req.body);
   const newScore = new Scores({
     score_points: req.body.score_point,

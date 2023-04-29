@@ -14,7 +14,7 @@ const Items = require("../../modules/Items_m");
     .then((items) => res.json(items));
   console.log(req.user);
 }); */
-router.get("/", auth, async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const items = await Items.find().sort({ date: -1 });
 
@@ -29,7 +29,7 @@ router.get("/", auth, async (req, res) => {
 //@des Create an item
 //@access Public
 
-router.post("/", (req, res) => {
+router.post("/", auth, (req, res) => {
   const newItem = new Items({
     indicator_type: req.body.indicator_type,
     indicator_name: req.body.indicator_name,
