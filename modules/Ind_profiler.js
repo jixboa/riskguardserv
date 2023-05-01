@@ -99,7 +99,6 @@ const IndProfilerSchema = new Schema(
     screening_status: {
       type: String,
       required: true,
-      minlength: 3,
       maxlength: 50,
     },
     screening_status_score: {
