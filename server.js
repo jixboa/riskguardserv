@@ -30,14 +30,12 @@ mongoose
     useUnifiedTopology: true,
     useNewUrlParser: true,
     useCreateIndex: true,
+    useFindAndModify: false,
   })
   .then(() => console.log("MongoDB Connected..."))
   .catch((err) => console.log(err));
 
 //Use routes
-/* app.use("/api/items", items);
-app.use("/api/images", images); */
-//app.use("/api/completedtodos", completedtodos);
 app.use("/api/signup", signup);
 app.use("/api/signin", signin);
 app.use("/api/indicators", indicators);

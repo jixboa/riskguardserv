@@ -40,7 +40,7 @@ router.post("/", (req, res) => {
     branch: req.body.branch,
     product: req.body.product,
     product_score: req.body.product_score,
-    nationality: req.body.nationality_score,
+    nationality: req.body.nationality,
     nationality_score: req.body.nationality_score,
     delivery_channel: req.body.delivery_channel,
     delivery_channel_score: req.body.delivery_channel_score,
@@ -59,6 +59,7 @@ router.post("/", (req, res) => {
     source_of_funds_score: req.body.source_of_funds_score,
     expected_monthly_income: req.body.expected_monthly_income,
     expected_monthly_income_score: req.body.expected_monthly_income_score,
+    total_score: req.body.total_score,
   });
 
   newIndProfile.save().then((profile) => res.json(profile));
